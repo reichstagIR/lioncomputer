@@ -1,0 +1,17 @@
+{
+    "account_exist": {
+        "message": "این حساب قبلا وجود دارد!"
+    },
+    "signin_success": {
+        "message": "ورود موفقیت آمیز بود."
+    },
+    "signup_success": {
+        "message": "ثبت نام موفقیت آمیز بود."
+    },
+    "credentials_problem": {
+        "message": "رمز عبور یا پسورد اشتباه است!"
+    },
+    "problem": {
+        "message": "مشکلی به وجود آمده است!"
+    }
+}

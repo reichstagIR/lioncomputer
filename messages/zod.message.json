@@ -1,0 +1,14 @@
+{
+    "invalid_type": {
+        "message": "فرمت وارد شده نادرست است."
+    },
+    "short_string": {
+        "message": "حداقل طول رشته باید {min} باشد."
+    },
+    "long_string": {
+        "message": "حداکثر طول رشته باید {max} باشد."
+    },
+    "required": {
+        "message": "این فیلد الزامی است."
+    }
+}
