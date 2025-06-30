@@ -6,7 +6,7 @@ import { prisma } from "@/prisma";
 import Credentials from "next-auth/providers/credentials";
 import NextAuth from "next-auth";
 // DAL
-import { signInUser } from "./data/auth.data";
+import { signInUser } from "./shared/dal/user.dal";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
     adapter: PrismaAdapter(prisma),

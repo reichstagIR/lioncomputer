@@ -6,7 +6,7 @@ import CardWrapper from "@/features/auth/components/card-wrapper";
 import LoginForm from "@/features/auth/components/signin-form";
 import SingUpForm from "@/features/auth/components/singup-form";
 // Redux
-import { useAppSelector } from "@/redux/hooks";
+import { useAppSelector } from "@/shared/redux/hooks";
 // Enum
 import EAuthFormCode from "@/features/auth/enum/formCode.enum";
 

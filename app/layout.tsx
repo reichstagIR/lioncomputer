@@ -1,5 +1,3 @@
-// Next
-import type { Metadata } from "next";
 // Font
 import { vazirmatn } from "./fonts/font";
 // Style
@@ -8,10 +6,6 @@ import "./globals.css";
 import Provider from "./providers";
 // HeroUI
 import { ToastProvider } from "@heroui/toast";
-
-export const metadata: Metadata = {
-    title: "لیون کامپیوتر",
-};
 
 export default function RootLayout({
     children,

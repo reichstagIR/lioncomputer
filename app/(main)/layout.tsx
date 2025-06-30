@@ -1,6 +1,18 @@
 // Components
-import MainHeader from "@/components/main-header";
-import MainFooter from "@/components/main-footer";
+import MainHeader from "@/shared/components/main-header";
+import MainFooter from "@/shared/components/main-footer";
+// Next
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: {
+        template:
+            "%s | لیون کامپیوتر | قیمت و خرید کامپیوتر و سیستم اسمبل شده لیون کامپیوتر",
+        default:
+            "لیون کامپیوتر | قیمت و خرید کامپیوتر و سیستم اسمبل شده لیون کامپیوتر",
+    },
+    description: "وبسایت رسمی لیون کامپیوتر - خرید و فورش سیستم و قطعات پی سی",
+};
 
 export default function RootLayout({
     children,
@@ -10,7 +22,7 @@ export default function RootLayout({
     return (
         <>
             <MainHeader />
-            {children}
+            <main>{children}</main>
             <MainFooter />
         </>
     );

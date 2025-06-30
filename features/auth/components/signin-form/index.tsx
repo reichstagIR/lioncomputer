@@ -6,7 +6,7 @@ import { Button } from "@heroui/button";
 import { Divider } from "@heroui/divider";
 import { addToast } from "@heroui/toast";
 // Redux
-import { useAppDispatch } from "@/redux/hooks";
+import { useAppDispatch } from "@/shared/redux/hooks";
 // Reducer
 import { setAuthForm } from "../../redux/auth.reducer";
 // Enum
@@ -17,7 +17,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 // Zod
 import { signInZodSchema, signInZodType } from "../../validator/signIn.zod";
 // DAL
-import { signInAction } from "@/data/auth.data";
+import signInAction from "../../action/sign-in-action";
 // React
 import { useTransition } from "react";
 

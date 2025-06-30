@@ -9,7 +9,9 @@ import { useState, useEffect } from "react";
 // Redux
 import { Provider as ReduxProvider } from "react-redux";
 // Store
-import { store } from "@/redux/store.redux";
+import { store } from "@/shared/redux/store.redux";
+// Next Auth
+import { SessionProvider } from "next-auth/react";
 
 interface IProviderProperties {
     children: React.ReactNode;
@@ -28,16 +30,18 @@ export default function Provider({ children }: IProviderProperties) {
     }
 
     return (
-        <HeroUIProvider>
-            <ReduxProvider store={store}>
-                <NextThemesProvider
-                    attribute="class"
-                    defaultTheme="system"
-                    enableSystem
-                >
-                    {children}
-                </NextThemesProvider>
-            </ReduxProvider>
-        </HeroUIProvider>
+        <SessionProvider>
+            <HeroUIProvider>
+                <ReduxProvider store={store}>
+                    <NextThemesProvider
+                        attribute="class"
+                        defaultTheme="system"
+                        enableSystem
+                    >
+                        {children}
+                    </NextThemesProvider>
+                </ReduxProvider>
+            </HeroUIProvider>
+        </SessionProvider>
     );
 }

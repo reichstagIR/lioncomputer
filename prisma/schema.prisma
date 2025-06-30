@@ -13,6 +13,18 @@ enum Role {
   USER
 }
 
+enum Menu_Position {
+  DASHBOARD
+  HEADER
+  MOBILE
+  FOOTER
+}
+
+enum Menu_Type {
+  LINK
+  MEGA
+}
+
 model User {
   id        String    @id @default(cuid())
   name      String
@@ -23,6 +35,9 @@ model User {
   role      Role      @default(USER)
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
+  active    Boolean   @default(true)
+
+  @@index([email])
 }
 
 model Account {
@@ -53,6 +68,8 @@ model Session {
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+
+  @@index([userId])
 }
 
 model VerificationToken {
@@ -61,4 +78,26 @@ model VerificationToken {
   expires    DateTime
 
   @@id([identifier, token])
+}
+
+model Menu {
+  id            String        @id @default(cuid())
+  menu_position Menu_Position
+  role          Role
+  Menu_Item     Menu_Item[]
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+}
+
+model Menu_Item {
+  id        String    @id @default(cuid())
+  menuId    String
+  menu      Menu      @relation(fields: [menuId], references: [id], onDelete: Cascade)
+  menu_type Menu_Type
+  order     Int
+  content   String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@index([menuId])
 }
